@@ -1,0 +1,103 @@
+turnkey-lapp-11.1 (1) turnkey; urgency=low
+
+  * Set PostgreSQL password is on firstboot (convenience, security).
+
+  * Force PostgreSQL to use Unicode/UTF8.
+
+  * Added php-xcache PHP opcode cacher / optimizer (performance).
+
+  * Support CGI out of the box.
+
+  * Set postfix MTA myhostname to localhost (bugfix).
+
+  * Minor tweaks to TKL web control panel.
+
+  * Major component versions:
+
+    phppgadmin      4.2.2-1ubuntu1
+    postgresql      8.4.5-0ubuntu10.04
+    apache2         2.2.14-5ubuntu8.4
+
+  * Note: Please refer to turnkey-core's changelog for changes common to all
+    appliances. Here we only describe changes specific to this appliance.
+
+ -- Alon Swartz <alon@turnkeylinux.org>  Sun, 19 Dec 2010 15:01:05 +0200
+
+turnkey-lapp-2009.10 (2) hardy; urgency=low
+
+  * Installed all security updates (see manifest for package versions).
+
+  * Install security updates on firstboot (except when running live).
+
+  * Bugfix: Updated apt preferences for auto-security updates (LP#550307).
+
+  * Trick webmin into not checking for upgrades (managed by apt).
+
+  * Included latest version of inithooks and updated scripts.
+
+  * Included wget as per common request.
+
+ -- Alon Swartz <alon@turnkeylinux.org>  Mon, 29 Mar 2010 09:02:11 +0200
+
+turnkey-lapp-2009.10 (1) hardy; urgency=low
+
+  * Added Turnkey web control panel (replaces welcome page). Also fixes
+    displaying correct host when behind proxy (SERVER_ADDR -> HTTP_HOST).
+
+  * Added postfix MTA (bound to localhost) to allow sending of email from
+    web applications (e.g., password recovery). Also added webmin-postfix
+    module for convenience.
+     
+  * di-live (installer) PostgreSQL component:
+
+    - Added support for complex passwords (LP#416515).
+    - Added CLI options (user/pass/query/chroot).
+
+  * Added postgresql-contrib (additional facilities for pgsql - convenience).
+  * Pinned phppgadmin to update directly from Debian (security).
+  * Bugfix: Added missing webmin-apache module.
+  * Added curl (generically useful in LAPP type appliances).
+  * Removed "AllowOverride None" directive from default site configuration.
+
+  * Regenerates all secrets during installation / firstboot (security).
+
+  * Major component versions:
+
+    phppgadmin      4.2.2-1
+    postgresql      8.3.8-0ubuntu8.04
+    apache2         2.2.8-1ubuntu0.11
+
+  * Note: Please refer to turnkey-core's changelog for changes common to all
+    appliances. Here we only describe changes specific to this appliance.
+
+ -- Alon Swartz <alon@turnkeylinux.org>  Tue, 29 Sep 2009 15:39:41 +0200
+
+turnkey-lapp-2009.02 (1) hardy; urgency=low
+
+  * added SSL support
+
+  * includes phppgadmin (listening on port 12322 - uses SSL)
+
+  * set postgres password to "postgres" in live/demo mode
+  * support configuring postgresql password during installation
+  * postgres password encryption enabled by default (security)
+  * trust "postgres" user when connecting over local unix sockets (convenience)
+
+  * added Python and Perl support for apache2 and postgresql, so the P in our
+    LAPP stack appliance now stands for Perl and Python in addition to PHP.
+
+  * updated apache2 "it works" page to provide more useful info/links
+  * added webmin PHP configuration module and increased default PHP limits
+    (convenience)
+
+  * major component versions
+
+    phppgadmin      4.2.2-1
+    postgresql      8.3.5-0ubuntu0.8.04
+    apache2         2.2.8-1ubuntu0.3
+    php5            5.2.4-2ubuntu5.4
+
+  * note: please refer to turnkey-core's changelog for changes common to all
+    appliances. Here we only describe changes specific to this appliance.
+
+ -- Alon Swartz <alon@turnkeylinux.org>  Thu, 29 Jan 2009 14:31:47 +0200
