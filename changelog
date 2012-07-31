@@ -1,3 +1,47 @@
+turnkey-lapp-12.0 (1) turnkey; urgency=low
+
+  * PostgreSQL:
+
+    - Reduced default shared_buffers to 24MB, as default Debian kernel SHMMAX
+      is too low for the default 32MB. Increase per deployment:
+          - /proc/sys/kernel/shmmax
+          - /etc/postgres/8.4/main/postgresql.conf (shared_buffers)
+
+  * Major component versions
+
+    apache2                 2.2.16-6+squeeze7
+    postgresql              8.4.12-0squeeze1
+    phppgadmin              4.2.3-1.1squeeze2
+
+    libapache2-mod-php5     5.3.3-7+squeeze13
+    php5-pgsql              5.3.3-7+squeeze13
+
+    libapache2-mod-python   3.3.1-9
+    python-pygresql         1:4.0-2+b1
+
+    libapache2-mod-perl2    2.0.4-7
+    libdbd-pg-perl          2.17.1-2+squeeze1
+
+  * Note: Please refer to turnkey-core's changelog for changes common to all
+    appliances. Here we only describe changes specific to this appliance.
+
+ -- Alon Swartz <alon@turnkeylinux.org>  Wed, 01 Aug 2012 08:00:00 +0200
+
+turnkey-lapp-11.3 (1) turnkey; urgency=low
+
+  * Installed security updates.
+  * Enabled etckeeper garbage collection by default.
+  * Upgraded to latest inithooks version (adhoc re-initialization via turnkey-init)
+
+ -- Alon Swartz <alon@turnkeylinux.org>  Mon, 05 Dec 2011 10:48:44 +0000
+
+turnkey-lapp-11.2 (1) turnkey; urgency=low
+
+  * Installed security updates.
+  * Added HubDNS package and firstboot configuration.
+
+ -- Alon Swartz <alon@turnkeylinux.org>  Fri, 15 Jul 2011 07:47:08 +0000
+
 turnkey-lapp-11.1 (1) turnkey; urgency=low
 
   * Set PostgreSQL password is on firstboot (convenience, security).
