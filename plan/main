@@ -9,5 +9,4 @@ python-pygresql          # PostgreSQL module for Python
 libapache2-mod-perl2     # Integration of perl with the Apache2 web server
 libdbd-pg-perl           # Perl DBI driver for the PostgreSQL database server
 
-curl
 
