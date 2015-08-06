@@ -11,7 +11,7 @@ and on top of that:
 
 - SSL support out of the box.
 - PHP, Python and Perl support for Apache2 and PostgreSQL.
-- `PHPPgAdmin`_ administration frontend for PostgreSQL (listening on
+- `Adminer`_ administration frontend for PostgreSQL (listening on
   port 12322 - uses SSL).
 - Webmin modules for configuring Apache2, PHP and PostgreSQL.
 - PostgreSQL listening on localhost (security)
@@ -29,5 +29,5 @@ Credentials *(passwords set at first boot)*
 -  PostgreSQL, phpPgAdmin: username **postgres**
 
 .. _TurnKey Core: http://www.turnkeylinux.org/core
-.. _PHPPgAdmin: http://phppgadmin.sourceforge.net/
+.. _Adminer: http://www.adminer.org/
 .. _LAMP stack: http://www.turnkeylinux.org/lampstack
