@@ -26,7 +26,7 @@ Credentials *(passwords set at first boot)*
 -------------------------------------------
 
 -  Webmin, SSH: username **root**
--  PostgreSQL, phpPgAdmin: username **postgres**
+-  PostgreSQL, Adminer: username **postgres**
 
 .. _TurnKey Core: http://www.turnkeylinux.org/core
 .. _Adminer: http://www.adminer.org/
