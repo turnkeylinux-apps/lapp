@@ -44,7 +44,7 @@
                     <div>
                         <a href="https://<?php print
                         $_SERVER{'HTTP_HOST'}; ?>:12322"><img
-                        src="images/phppgadmin.png"/>PHPPgAdmin</a>
+                        src="images/adminer.png"/>Adminer</a>
                     </div>
                     <div></div>
                     <div></div>
