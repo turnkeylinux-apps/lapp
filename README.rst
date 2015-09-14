@@ -28,6 +28,6 @@ Credentials *(passwords set at first boot)*
 -  Webmin, SSH: username **root**
 -  PostgreSQL, Adminer: username **postgres**
 
-.. _TurnKey Core: http://www.turnkeylinux.org/core
+.. _TurnKey Core: https://www.turnkeylinux.org/core
 .. _Adminer: http://www.adminer.org/
-.. _LAMP stack: http://www.turnkeylinux.org/lampstack
+.. _LAMP stack: https://www.turnkeylinux.org/lampstack
