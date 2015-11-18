@@ -60,7 +60,7 @@
                           (to disable: a2dismod status)
                         </li>
                         <li><a
-                        href="http://www.turnkeylinux.org/lapp">
+                        href="https://www.turnkeylinux.org/lapp">
                         TurnKey LAPP release notes</a></li>
                     </ul>
 
