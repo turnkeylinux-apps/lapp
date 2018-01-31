@@ -2,7 +2,7 @@ turnkey-lapp-15.0 (1) turnkey; urgency=low
 
   * Install Adminer directly from stretch/main repo
 
-  * Replace MySQL with MariaDB
+  * Latest Debian Stretch package versions of all components.
 
   * Note: Please refer to turnkey-core's changelog for changes common to all
     appliances. Here we only describe changes specdific to this appliance.
