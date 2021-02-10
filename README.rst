@@ -39,6 +39,8 @@ Credentials *(passwords set at first boot)*
 -  PostgreSQL, Adminer: username **postgres**
 
 .. _TurnKey Core: https://www.turnkeylinux.org/core
+.. _composer: https://getcomposer.org/
+.. _turnkey-composer: https://github.com/turnkeylinux/common/blob/master/overlays/composer/usr/local/bin/turnkey-composer
 .. _Adminer: http://www.adminer.org/
 .. _Postfix: https://www.postfix.org/
 .. _LAMP stack: https://www.turnkeylinux.org/lampstack
