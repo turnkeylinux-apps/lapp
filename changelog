@@ -3,7 +3,7 @@ turnkey-lapp-16.1 (1) turnkey; urgency=low
   * Include 'turnkey-composer' wrapper script - runs composer as www-data
     user. Makes it easy to not run composer as root - part of #1539.
 
-  * Explictly install composer (rather than automatically include in all LAMP
+  * Explicitly install composer (rather than automatically include in all LAMP
     based appliances) - part of #1563.
 
   * Note: Please refer to turnkey-core's 16.1 changelog for changes common to
@@ -13,10 +13,10 @@ turnkey-lapp-16.1 (1) turnkey; urgency=low
 
 turnkey-lapp-16.0 (1) turnkey; urgency=low
 
-  * Explcitly disable TLS<1.2 (i.e. SSLv3, TLSv1, TLSv1.1). (v15.x
+  * Explicitly disable TLS<1.2 (i.e. SSLv3, TLSv1, TLSv1.1). (v15.x
     TurnKey releases supported TLS 1.2, but could fallback as low as TLSv1).
 
-  * Update SSL/TLS cyphers to provide "Intermediate" browser/client support
+  * Update SSL/TLS ciphers to provide "Intermediate" browser/client support
     (suitable for "General-purpose servers with a variety of clients,
     recommended for almost all systems"). As provided by Mozilla via
     https://ssl-config.mozilla.org/.
@@ -71,7 +71,7 @@ turnkey-lapp-14.0 (1) turnkey; urgency=low
 
   * Latest Debian Jessie package versions of all components.
 
-  * Replaced PHPPgAdmin with Adminer.
+  * Replaced phpPgAdmin with Adminer.
 
   * Hardened default SSL settings
 
@@ -93,7 +93,7 @@ turnkey-lapp-13.0 (1) turnkey; urgency=low
 
 turnkey-lapp-12.1 (1) turnkey; urgency=low
 
-  * Added phpsh (interative shell for PHP) and php5-cli (generically useful).
+  * Added phpsh (interactive shell for PHP) and php5-cli (generically useful).
 
   * Note: Please refer to turnkey-core's changelog for changes common to all
     appliances. Here we only describe changes specific to this appliance.

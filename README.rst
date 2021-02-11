@@ -14,7 +14,7 @@ and on top of that:
 - PHP development helpers:
 
     - composer_ installed globally (/usr/local/bin/composer) from upstream.
-    - turnkey-composer_ convienience wrapper script - runs composer as the
+    - turnkey-composer_ convenience wrapper script - runs composer as the
       'www-data' (webserver) user account.
     - php-cli: command-line interpreter.
 
