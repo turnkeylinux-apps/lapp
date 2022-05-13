@@ -1,4 +1,13 @@
-turnkey-lapp-16.1 (1) turnkey; urgency=low
+turnkey-lapp-17.0 (1) turnkey; urgency=low
+
+  * Updated PostgreSQL packages for Python to the latest version. 
+
+  * Note: Please refer to turnkey-core's 16.1 changelog for changes common to
+    all appliances. Here we only describe changes specific to this appliance.
+
+ -- Mira Heichenko <mira.heichenko@gmail.com>  Fri, 13 May 2022 06:43:50 +0000
+ 
+ turnkey-lapp-16.1 (1) turnkey; urgency=low
 
   * Include 'turnkey-composer' wrapper script - runs composer as www-data
     user. Makes it easy to not run composer as root - part of #1539.
