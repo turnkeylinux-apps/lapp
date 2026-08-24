@@ -1,3 +1,17 @@
+turnkey-lapp-19.0 (1) turnkey; urgency=low
+
+  * Upgraded base distribution to Debian 13.x/Trixie.
+
+  * Updated the Debian web stack to Apache 2.4, PHP 8.4, PostgreSQL 17 and
+    Adminer 5.2.
+
+  * Use Debian's Composer package and current Python, Perl and PHP PostgreSQL
+    client libraries. Remove obsolete packages no longer provided by Trixie.
+
+  * See the TurnKey Core 19.0 changelog for changes common to all appliances.
+
+ -- TurnKey Linux release engineering <release@turnkeylinux.org>  Mon, 24 Aug 2026 00:00:00 +0000
+
 turnkey-lapp-18.1 (1) turnkey; urgency=low
 
   * v18.1 rebuild - includes latest Debian & TurnKey packages.
