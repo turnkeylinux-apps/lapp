@@ -102,6 +102,7 @@ curl --insecure --silent --show-error --location \
     --data-urlencode 'auth[db]=postgres' \
     https://127.0.0.1:12322/ >"$response"
 grep -qi 'PostgreSQL' "$response"
+grep -qi 'Logout' "$response"
 if grep -qi 'Invalid credentials\|Access denied' "$response"; then
     echo 'Adminer rejected the PostgreSQL credentials' >&2
     exit 1
@@ -116,8 +117,12 @@ for package in apache2 libapache2-mod-php postgresql adminer composer; do
 done
 after="$(dpkg-query -W -f='${Version}' apache2)|$(dpkg-query -W -f='${Version}' libapache2-mod-php)|$(dpkg-query -W -f='${Version}' postgresql)|$(dpkg-query -W -f='${Version}' adminer)|$(dpkg-query -W -f='${Version}' composer)"
 test "$after" = "$before"
-test -f /etc/apt/sources.list.d/debian.sources
-! grep -Rqi bookworm /etc/apt/sources.list /etc/apt/sources.list.d
+grep -Rqs '^Suites: trixie' /etc/apt/sources.list.d
+grep -Rqs '^URIs: http://deb.debian.org/debian' /etc/apt/sources.list.d
+if [[ -f /etc/apt/sources.list ]]; then
+    ! grep -qi bookworm /etc/apt/sources.list
+fi
+! grep -Rqi bookworm /etc/apt/sources.list.d
 
 cat >"$result" <<EOF
 package_source=Debian 13 Trixie APT repositories for Apache, PHP, PostgreSQL, Adminer, Composer and language database clients; TurnKey APT for Webmin modules
