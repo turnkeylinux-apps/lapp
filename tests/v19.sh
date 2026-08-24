@@ -9,7 +9,7 @@ table=tkl_main_flow
 document_root=/var/www
 php_test=$document_root/tkl-v19-db.php
 python_test=$document_root/cgi-bin/tkl-v19-python.cgi
-password_file=/tmp/tkl-lapp-db-pass.$$
+password_file=/run/tkl-v19-tests/lapp-db-pass.$$
 response=/tmp/tkl-lapp-response.$$
 cookies=/tmp/tkl-lapp-adminer-cookies.$$
 
