@@ -18,6 +18,7 @@ cleanup() {
     su postgres -c "dropdb --if-exists '$database'" >/dev/null 2>&1 || true
 }
 trap cleanup EXIT
+trap 'echo "LAPP v19 test failed at line $LINENO" >&2' ERR
 
 systemctl --quiet is-active apache2.service postgresql.service multi-user.target
 
