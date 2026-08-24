@@ -27,14 +27,17 @@ postgresql_version=$(dpkg-query -W -f='${Version}' postgresql)
 adminer_version=$(dpkg-query -W -f='${Version}' adminer)
 composer_version=$(dpkg-query -W -f='${Version}' composer)
 
-curl --insecure --fail --silent --show-error https://127.0.0.1/ |
-    grep -q 'TurnKey LAPP'
-curl --insecure --fail --silent --show-error https://127.0.0.1/phpinfo.php |
-    grep -q 'PHP Version 8.4'
-curl --insecure --fail --silent --show-error https://127.0.0.1/server-status |
-    grep -q 'Apache Server Status'
-curl --insecure --fail --silent --show-error https://127.0.0.1/cgi-bin/test.cgi |
-    grep -q 'Hello, world.'
+curl --insecure --fail --silent --show-error https://127.0.0.1/ >"$response"
+grep -q 'TurnKey LAPP' "$response"
+curl --insecure --fail --silent --show-error \
+    https://127.0.0.1/phpinfo.php >"$response"
+grep -q 'PHP Version 8.4' "$response"
+curl --insecure --fail --silent --show-error \
+    https://127.0.0.1/server-status >"$response"
+grep -q 'Apache Server Status' "$response"
+curl --insecure --fail --silent --show-error \
+    https://127.0.0.1/cgi-bin/test.cgi >"$response"
+grep -q 'Hello, world.' "$response"
 
 cat >"$python_test" <<'PYTHON'
 #!/usr/bin/python3
@@ -43,8 +46,8 @@ print("python-cgi-ok")
 PYTHON
 chmod 0755 "$python_test"
 curl --insecure --fail --silent --show-error \
-    https://127.0.0.1/cgi-bin/tkl-v19-python.cgi |
-    grep -Fxq 'python-cgi-ok'
+    https://127.0.0.1/cgi-bin/tkl-v19-python.cgi >"$response"
+grep -Fxq 'python-cgi-ok' "$response"
 
 python3 -c 'import pg, psycopg2'
 perl -MDBD::Pg -e 'exit 0'
@@ -73,8 +76,9 @@ echo pg_fetch_result(\$query, 0, 0);
 ?>
 PHP
 chmod 0644 "$php_test"
-curl --insecure --fail --silent --show-error https://127.0.0.1/tkl-v19-db.php |
-    grep -Fxq 'database-backed-php-ok'
+curl --insecure --fail --silent --show-error \
+    https://127.0.0.1/tkl-v19-db.php >"$response"
+grep -Fxq 'database-backed-php-ok' "$response"
 
 test "$(su postgres -c "psql -Atqc 'SHOW password_encryption'")" = scram-sha-256
 ss -ltn | awk '$4 ~ /^(127\.0\.0\.1|\[::1\]):5432$/ { found=1 } END { exit !found }'
